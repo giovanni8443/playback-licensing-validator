@@ -4,7 +4,7 @@ import java.io.File;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-import org.jbarone.utils.TestUtils;
+import org.jbarone.utils.ResourceUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -14,7 +14,7 @@ public class MemberTest {
 
   @Test
   public void testFromJsonFile() throws Exception {
-    File jsonFile = TestUtils.loadResourceFile("members/jsmith.json");
+    File jsonFile = ResourceUtils.loadResourceFile("members/jsmith.json");
     Member actual = Member.fromJsonFile(jsonFile);
 
     assertEquals("5678", actual.getId());

@@ -9,7 +9,31 @@ repositories {
   mavenCentral()
 }
 
+task(runValidateLicense, dependsOn: 'classes', type: JavaExec) {
+  if (project.hasProperty('appArgs')){
+    args Eval.me(appArgs)
+  }
+  main = 'org.jbarone.mediaPlayback.ValidateLicense'
+  classpath = sourceSets.main.runtimeClasspath
+}
+
 dependencies {
-  compile "com.fasterxml.jackson.core:jackson-databind:2.9.8"
-  testCompile "junit:junit:4.12"
+  compile (
+    'com.fasterxml.jackson.core:jackson-databind:2.9.8',
+    'org.apache.logging.log4j:log4j-api:2.11.2',
+    'org.apache.logging.log4j:log4j-core:2.11.2',
+    'org.slf4j:slf4j-api:1.7.26',
+    'org.apache.logging.log4j:log4j-slf4j-impl:2.11.2',
+    'com.savoirtech.logging:slf4j-json-logger:2.0.2',
+    'net.logstash.log4j:jsonevent-layout:1.7'
+  )
+  testCompile 'junit:junit:4.12'
+}
+
+sourceSets {
+  test {
+    java {
+      srcDirs = ["src/test/java"]
+    }
+  }
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+
+  <!-- Logging Properties -->
+  <Properties>
+    <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
+    <Property name="JSON_PATTERN">%m%n</Property>
+  </Properties>
+
+  <Appenders>
+
+    <!-- Console Appender -->
+    <Console name="Console" target="SYSTEM_OUT" follow="true">
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+    </Console>
+
+    <!-- File Appenders on need basis -->
+    <RollingFile name="reportingLog" fileName="logs/app-reporting.log"
+                 filePattern="logs/app-reporting-%d{yyyy-MM-dd}-%i.log">
+      <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout pattern="${JSON_PATTERN}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="19500KB" />
+      </Policies>
+      <DefaultRolloverStrategy max="10"/>
+    </RollingFile>
+
+    <RollingFile name="debugLog" fileName="logs/app-debug.log"
+                 filePattern="logs/app-debug-%d{yyyy-MM-dd}-%i.log">
+      <LevelRangeFilter minLevel="FATAL" maxLevel="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="19500KB" />
+      </Policies>
+      <DefaultRolloverStrategy max="10"/>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+    <Logger name="reportingLogger" additivity="false" level="trace">
+      <AppenderRef ref="reportingLog" />
+      <AppenderRef ref="Console" />
+    </Logger>
+
+    <Logger name="debugLogger" additivity="false" level="debug">
+      <AppenderRef ref="debugLog" />
+      <AppenderRef ref="Console"  />
+    </Logger>
+
+    <Root level="debug">
+      <AppenderRef ref="Console"/>
+    </Root>
+
+  </Loggers>
+
+</Configuration>

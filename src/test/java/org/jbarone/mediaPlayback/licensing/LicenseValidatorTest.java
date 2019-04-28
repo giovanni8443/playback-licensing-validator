@@ -6,7 +6,7 @@ import java.util.*;
 import org.jbarone.mediaPlayback.Device;
 import org.jbarone.mediaPlayback.Member;
 import org.jbarone.mediaPlayback.Viewable;
-import org.jbarone.utils.TestUtils;
+import org.jbarone.utils.ResourceUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -148,16 +148,16 @@ public class LicenseValidatorTest {
   public void testValidateForPlayback_baseRuleSet() throws Exception {
     LicenseValidator validator = new LicenseValidator();
 
-    File jsmithFile  = TestUtils.loadResourceFile("members/jsmith.json");
+    File jsmithFile  = ResourceUtils.loadResourceFile("members/jsmith.json");
     Member jsmith = Member.fromJsonFile(jsmithFile);
 
-    File sGS9File = TestUtils.loadResourceFile("devices/samsung_GS9.json");
+    File sGS9File = ResourceUtils.loadResourceFile("devices/samsung_GS9.json");
     Device sGS9 = Device.fromJsonFile(sGS9File);
 
-    File anonymousFile = TestUtils.loadResourceFile("members/anonymous.json");
+    File anonymousFile = ResourceUtils.loadResourceFile("members/anonymous.json");
     Member anonymous = Member.fromJsonFile(anonymousFile);
 
-    File stIVFile = TestUtils.loadResourceFile("viewables/StarTrekIV.json");
+    File stIVFile = ResourceUtils.loadResourceFile("viewables/StarTrekIV.json");
     Viewable stIV = Viewable.fromJsonFile(stIVFile);
 
     // jsmith
@@ -166,10 +166,10 @@ public class LicenseValidatorTest {
     // anonymous
     assertTrue(validator.validateForPlayback(anonymous, sGS9, stIV));
 
-    File tbradyFile = TestUtils.loadResourceFile("members/tbrady.json");
+    File tbradyFile = ResourceUtils.loadResourceFile("members/tbrady.json");
     Member tbrady = Member.fromJsonFile(tbradyFile);
 
-    File schListFile = TestUtils.loadResourceFile("viewables/SchindlersList.json");
+    File schListFile = ResourceUtils.loadResourceFile("viewables/SchindlersList.json");
     Viewable schList = Viewable.fromJsonFile(schListFile);
 
     // Jsmith is old enough
@@ -181,7 +181,7 @@ public class LicenseValidatorTest {
     // anonymous is too young for R
     assertFalse(validator.validateForPlayback(anonymous, sGS9, schList));
 
-    File bwilsonFile = TestUtils.loadResourceFile("members/bwilson.json");
+    File bwilsonFile = ResourceUtils.loadResourceFile("members/bwilson.json");
     Member bwilson = Member.fromJsonFile(bwilsonFile);
 
     // BWilson is inactive AND too young
@@ -220,22 +220,22 @@ public class LicenseValidatorTest {
 
     validator.setCurrentRuleSet(dynamicRuleSet);
 
-    File jsmithFile  = TestUtils.loadResourceFile("members/jsmith.json");
+    File jsmithFile  = ResourceUtils.loadResourceFile("members/jsmith.json");
     Member jsmith = Member.fromJsonFile(jsmithFile);
 
-    File sGS9File = TestUtils.loadResourceFile("devices/samsung_GS9.json");
+    File sGS9File = ResourceUtils.loadResourceFile("devices/samsung_GS9.json");
     Device sGS9 = Device.fromJsonFile(sGS9File);
 
-    File tbradyFile = TestUtils.loadResourceFile("members/tbrady.json");
+    File tbradyFile = ResourceUtils.loadResourceFile("members/tbrady.json");
     Member tbrady = Member.fromJsonFile(tbradyFile);
 
-    File bwilsonFile = TestUtils.loadResourceFile("members/bwilson.json");
+    File bwilsonFile = ResourceUtils.loadResourceFile("members/bwilson.json");
     Member bwilson = Member.fromJsonFile(bwilsonFile);
 
-    File anonymousFile = TestUtils.loadResourceFile("members/anonymous.json");
+    File anonymousFile = ResourceUtils.loadResourceFile("members/anonymous.json");
     Member anonymous = Member.fromJsonFile(anonymousFile);
 
-    File schListFile = TestUtils.loadResourceFile("viewables/SchindlersList.json");
+    File schListFile = ResourceUtils.loadResourceFile("viewables/SchindlersList.json");
     Viewable schList = Viewable.fromJsonFile(schListFile);
 
     // Jsmith is old enough

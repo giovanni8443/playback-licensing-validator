@@ -1,6 +1,6 @@
 package org.jbarone.mediaPlayback;
 
-import org.jbarone.utils.TestUtils;
+import org.jbarone.utils.ResourceUtils;
 import org.junit.Test;
 
 import java.io.File;
@@ -11,7 +11,7 @@ public class DeviceTest {
 
   @Test
   public void testFromJsonFile() throws Exception {
-    File jsonFile = TestUtils.loadResourceFile("devices/samsung_GS9.json");
+    File jsonFile = ResourceUtils.loadResourceFile("devices/samsung_GS9.json");
     Device actual = Device.fromJsonFile(jsonFile);
 
     assertEquals("Samsung", actual.getBrandName());

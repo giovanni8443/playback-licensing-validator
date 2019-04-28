@@ -1,6 +1,6 @@
 package org.jbarone.mediaPlayback;
 
-import org.jbarone.utils.TestUtils;
+import org.jbarone.utils.ResourceUtils;
 import org.junit.Test;
 
 import java.io.File;
@@ -13,7 +13,7 @@ public class ViewableTest {
 
   @Test
   public void testFromJsonFile() throws Exception {
-    File jsonFile = TestUtils.loadResourceFile("viewables/StarTrekIV.json");
+    File jsonFile = ResourceUtils.loadResourceFile("viewables/StarTrekIV.json");
     Viewable actual = Viewable.fromJsonFile(jsonFile);
 
     assertEquals("Star Trek IV; The Voyage Home", actual.getName());

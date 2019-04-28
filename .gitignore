@@ -1,3 +1,6 @@
 .gradle/
 .idea/
 out/
+logs/
+.DS_Store
+build/
