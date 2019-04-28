@@ -1,0 +1,8 @@
+{
+  "id": "5432",
+  "membershipStatus": "Active",
+  "maxNumberStreamsAllowed": 10,
+  "maxStreamsPerPeriodDays": 2,
+  "currentStreamsViewedCount": 0,
+  "locale": "en-US"
+}

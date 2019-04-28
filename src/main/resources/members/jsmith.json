@@ -1,0 +1,11 @@
+{
+  "id": "5678",
+  "userName": "jsmith",
+  "displayName": "Jeffery Smith",
+  "membershipStatus": "Active",
+  "maxNumberStreamsAllowed": 10,
+  "maxStreamsPerPeriodDays": 2,
+  "currentStreamsViewedCount": 0,
+  "locale": "en-US",
+  "age": 22
+}

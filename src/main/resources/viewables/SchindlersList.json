@@ -1,0 +1,13 @@
+{
+  "name": "Schindler's List",
+  "description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+  "resolutionWidth": 2960,
+  "resolutionHeight": 1440,
+  "allowedCountries": [
+    "US",
+    "CA",
+    "GB"
+  ],
+  "rating": "R",
+  "runningTime": 195
+}

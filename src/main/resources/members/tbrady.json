@@ -1,0 +1,11 @@
+{
+  "id": "9876",
+  "userName": "tbrady",
+  "displayName": "Tom Brady",
+  "membershipStatus": "Active",
+  "maxNumberStreamsAllowed": 10,
+  "maxStreamsPerPeriodDays": 2,
+  "currentStreamsViewedCount": 0,
+  "locale": "en-US",
+  "age": 12
+}

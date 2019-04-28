@@ -1,0 +1,15 @@
+group 'jbarone'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "com.fasterxml.jackson.core:jackson-databind:2.9.8"
+  testCompile "junit:junit:4.12"
+}

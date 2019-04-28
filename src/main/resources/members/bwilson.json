@@ -1,0 +1,11 @@
+{
+  "id": "1234",
+  "userName": "bwilson",
+  "displayName": "Brian Wilson",
+  "membershipStatus": "Inactive",
+  "maxNumberStreamsAllowed": 10,
+  "maxStreamsPerPeriodDays": 2,
+  "currentStreamsViewedCount": 0,
+  "locale": "en-US",
+  "age": 9
+}
